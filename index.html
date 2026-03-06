@@ -338,7 +338,11 @@
       padding: 3rem; display: flex; justify-content: space-between;
       align-items: center; font-size: 0.8rem;
     }
-    footer img { height: 40px; filter: brightness(0) invert(1); }
+    footer .footer-logo {
+      width: 56px; height: 56px; background: var(--cream); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    footer .footer-logo img { height: 40px; }
     footer a { color: var(--yellow); text-decoration: none; }
 
     /* ---- PHOTO STRIP ---- */
@@ -494,9 +498,9 @@
 
   <!-- CENTENNIAL BLEED -->
   <div class="bleed">
-    <div class="ph"><img src="images/group-colorful.png" alt="Abernethy community group photo"></div>
+    <div class="ph"><img src="images/community-dusk.png" alt="Abernethy community gathering at dusk"></div>
     <div class="bleed-overlay">
-      <h2>Abernethy turned <em>100</em> in 2025. We threw a hell of a party.</h2>
+      <h2>Abernethy turned <em>100</em> in 2025. And we're just getting started.</h2>
     </div>
   </div>
 
@@ -541,7 +545,7 @@
 
   <!-- PHOTO BLEED 2 -->
   <div class="bleed">
-    <div class="ph"><img src="images/community-dusk.png" alt="Abernethy community gathering at dusk"></div>
+    <div class="ph"><img src="images/group-colorful.png" alt="Abernethy community group photo"></div>
     <div class="bleed-overlay">
       <h2>This is what <em>showing up</em> looks like.</h2>
     </div>
@@ -643,7 +647,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <div>
+    <div class="footer-logo">
       <img src="images/logo.png" alt="Abernethy Elementary">
     </div>
     <div>

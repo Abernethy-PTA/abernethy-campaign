@@ -242,6 +242,30 @@
       font-size: 1rem; opacity: 0.5; margin-top: 1.5rem;
     }
 
+    /* ---- SWIFTS SPOTLIGHT ---- */
+    .swifts-spotlight {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; padding: 5rem 3rem; align-items: center;
+    }
+    .swifts-text .kicker {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+      font-weight: 700; color: var(--orange); margin-bottom: 0.75rem;
+    }
+    .swifts-text h2 {
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 400;
+      line-height: 1.05; margin-bottom: 1.25rem;
+    }
+    .swifts-text p {
+      font-size: 1rem; line-height: 1.6; color: #555; max-width: 460px;
+    }
+    .swifts-text .credit {
+      font-size: 0.8rem; color: #888; margin-top: 1rem;
+    }
+    .swifts-text .credit a { color: var(--orange); font-weight: 600; }
+    .swifts-embed {
+      display: flex; justify-content: center;
+    }
+
     /* ---- TIERS ---- */
     .tiers-row {
       display: grid; grid-template-columns: repeat(3, 1fr);
@@ -400,6 +424,7 @@
       .cta-split { grid-template-columns: 1fr; }
       .cta-text { padding: 3rem 2rem; }
       .bleed { min-height: 350px; }
+      .swifts-spotlight { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 2rem; }
       .photo-strip { grid-template-columns: 1fr 1fr; }
       .photo-strip .ph { min-height: 200px; }
       .photo-pair { grid-template-columns: 1fr; }
@@ -497,11 +522,26 @@
 
   <!-- PHOTO STRIP: NEIGHBORHOOD LIFE -->
   <div class="photo-strip">
-    <div class="ph"><img src="images/chimney-swifts.png" alt="Chimney swifts at Chapman"></div>
     <div class="ph"><img src="images/walking-bus.png" alt="Walking school bus"></div>
     <div class="ph"><img src="images/soccer-field.png" alt="School soccer field"></div>
     <div class="ph"><img src="images/campus-aerial.png" alt="Aerial view of Abernethy campus"></div>
   </div>
+
+  <!-- SWIFTS SPOTLIGHT -->
+  <section class="swifts-spotlight block-cream">
+    <div class="swifts-text">
+      <p class="kicker">Fall 2025</p>
+      <h2 class="serif">The swifts pick our chimney.</h2>
+      <p>Thousands of Vaux's swifts swirl into Abernethy's chimney every fall on their way south &mdash; one of the great natural spectacles in Portland, right in our backyard.</p>
+      <p class="credit">Video: <a href="https://www.tiktok.com/@birdallianceoforegon" target="_blank" rel="noopener">Bird Alliance of Oregon</a></p>
+    </div>
+    <div class="swifts-embed">
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@birdallianceoforegon/video/7550728173906955550" data-video-id="7550728173906955550" style="max-width: 605px; min-width: 325px;">
+        <section><a target="_blank" href="https://www.tiktok.com/@birdallianceoforegon/video/7550728173906955550">Watch on TikTok</a></section>
+      </blockquote>
+      <script async src="https://www.tiktok.com/embed.js"></script>
+    </div>
+  </section>
 
   <!-- CENTENNIAL BLEED -->
   <div class="bleed">

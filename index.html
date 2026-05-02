@@ -374,6 +374,14 @@
     }
     footer .footer-logo img { height: 40px; }
     footer a { color: var(--yellow); text-decoration: none; }
+    footer .socials {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+    }
+    footer .socials a {
+      color: rgba(248,246,241,0.55); font-size: 0.78rem;
+      text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;
+    }
+    footer .socials a:hover { color: var(--yellow); }
 
     /* ---- PHOTO STRIP ---- */
     .photo-strip {
@@ -697,7 +705,7 @@
         <a href="mailto:hello@abernethy2125.org" class="o">Contact Us</a>
       </div>
     </div>
-    <div class="ph" style="min-height:400px;"><img src="images/bike-bus.png" alt="Abernethy bike bus"></div>
+    <a class="ph" href="https://www.instagram.com/abernethybikebus" target="_blank" rel="noopener" style="min-height:400px; display:block;"><img src="images/bike-bus.png" alt="Abernethy bike bus — follow @abernethybikebus on Instagram"></a>
   </div>
 
   <!-- FOOTER -->
@@ -707,7 +715,13 @@
     </div>
     <div>
       <p>Abernethy Elementary &middot; Portland, Oregon</p>
+      <p>Abernethy PTA &middot; <a href="https://supportabernethy.org" target="_blank" rel="noopener">supportabernethy.org</a></p>
       <p>501(c)(3) &middot; All donations tax-deductible</p>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/abernethy_eagles" target="_blank" rel="noopener">@abernethy_eagles</a>
+      <a href="https://www.instagram.com/abernethypta" target="_blank" rel="noopener">@abernethypta</a>
+      <a href="https://www.instagram.com/abernethybikebus" target="_blank" rel="noopener">@abernethybikebus</a>
     </div>
     <div>
       <a href="https://abernethyelementaryschool.betterworld.org/campaigns/abernethy-century-campaign" target="_blank" rel="noopener">Donate on BetterWorld</a>

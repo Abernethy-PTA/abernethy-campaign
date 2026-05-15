@@ -267,6 +267,22 @@
     .tiers-row {
       display: grid; grid-template-columns: repeat(3, 1fr);
     }
+    .tiers-row.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .tiers-subhead {
+      background: var(--cream); text-align: center;
+      padding: 2.5rem 2rem 1rem;
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+      font-weight: 700; color: #999;
+    }
+    .tier-paint .tier-amount { margin-bottom: 0.4rem; }
+    .tier-paint .paint-line {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.5rem; line-height: 1.1; margin-bottom: 0.4rem;
+    }
+    .tier-paint .paint-sub {
+      font-size: 0.85rem; color: #888; line-height: 1.5;
+      flex: 1; margin-bottom: 1.25rem;
+    }
     .tier-cell {
       padding: 3rem 2rem;
       border-right: 1px solid rgba(10,10,10,0.08);
@@ -305,17 +321,36 @@
     .tier-cell.highlight .tier-cta { background: var(--orange); }
     .tier-cell .tier-cta:hover { transform: translateY(-1px); }
 
-    .major-row {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      border-top: 3px solid var(--black);
+    /* ---- PAINT DAY ---- */
+    .paint-day {
+      background: var(--black); color: var(--white);
+      padding: 5rem 2rem; text-align: center; position: relative;
     }
-    .major-cell {
-      padding: 2rem; text-align: center;
-      border-right: 1px solid rgba(10,10,10,0.08);
+    .paint-day .kicker {
+      font-size: 0.85rem; font-weight: 700; color: #ff7eb6;
+      text-transform: uppercase; letter-spacing: 0.18em; margin-bottom: 1.25rem;
     }
-    .major-cell:last-child { border: none; }
-    .major-cell .tier-label { margin-bottom: 0.25rem; }
-    .major-cell .tier-amount { margin-bottom: 0; font-size: 1.6rem; }
+    .paint-day .big-date {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: clamp(4.5rem, 14vw, 10rem); line-height: 0.9;
+      color: var(--yellow); font-weight: 700; letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .paint-day .rule {
+      width: 80px; height: 3px; background: var(--orange);
+      margin: 0 auto 1.5rem; border: none;
+    }
+    .paint-day .event-name {
+      font-size: 1.4rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.18em; margin-bottom: 0.75rem;
+    }
+    .paint-day .event-meta {
+      font-size: 1rem; color: rgba(248,246,241,0.75); margin-bottom: 1.25rem;
+    }
+    .paint-day .event-note {
+      font-size: 0.85rem; color: rgba(248,246,241,0.4);
+      font-style: italic;
+    }
 
     /* ---- SUPPORTERS ---- */
     .supporters-grid {
@@ -406,6 +441,13 @@
     /* ---- RESPONSIVE ---- */
     @media (max-width: 900px) {
       nav ul { display: none; }
+      .hero-banner {
+        overflow-x: auto; overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .hero-banner::-webkit-scrollbar { display: none; }
+      .hero-banner img { width: auto; height: 280px; max-width: none; }
       .hero-stats { grid-template-columns: repeat(3, 1fr); }
       .hero-stat:nth-child(4), .hero-stat:nth-child(5) { display: none; }
       .hero-text { padding: 3rem 1.5rem 2.5rem; }
@@ -473,6 +515,16 @@
       <div class="hero-stat"><div class="n">150+</div><div class="l">Volunteers</div></div>
       <div class="hero-stat"><div class="n">100</div><div class="l">Years</div></div>
     </div>
+  </section>
+
+  <!-- COMMUNITY PAINTING DAY -->
+  <section class="paint-day" id="paint-day">
+    <p class="kicker">Paint with us</p>
+    <h2 class="big-date">May 30</h2>
+    <hr class="rule">
+    <p class="event-name">Community Painting Day</p>
+    <p class="event-meta">9 AM &middot; All ages welcome</p>
+    <p class="event-note">More information to come.</p>
   </section>
 
   <!-- ABOUT -->
@@ -608,61 +660,59 @@
 
   <!-- TIERS -->
   <section class="block block-cream" id="tiers" style="padding-bottom:0;">
-    <div class="inner" style="text-align:center; margin-bottom:3rem;">
+    <div class="inner" style="text-align:center;">
       <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em; font-weight:700; color:var(--orange); margin-bottom:0.75rem;">How to Support</p>
       <h2 class="serif" style="font-size:clamp(2rem,4vw,3rem); font-weight:400;">Pick your level. Every one matters.</h2>
     </div>
   </section>
+  <div class="tiers-subhead">Inspired by the mural</div>
   <div class="tiers-row">
-    <div class="tier-cell">
-      <div class="tier-label">Advocate</div>
-      <div class="tier-amount">$50</div>
-      <ul>
-        <li>Name on Abernethy website</li>
-        <li>Community newsletter mention</li>
-        <li>Window sticker</li>
-      </ul>
-      <a href="https://abernethyelementaryschool.betterworld.org/campaigns/abernethy-century-campaign" class="tier-cta" target="_blank" rel="noopener">Give</a>
+    <div class="tier-cell tier-paint">
+      <div class="tier-amount">$6</div>
+      <p class="paint-line">A swift</p>
+      <p class="paint-sub">Small as a swooping bird.</p>
+      <a href="https://abernethyelementaryschool.betterworld.org/campaigns/abernethy-century-campaign" class="tier-cta" target="_blank" rel="noopener">Give $6</a>
     </div>
-    <div class="tier-cell highlight">
+    <div class="tier-cell tier-paint">
+      <div class="tier-amount">$60</div>
+      <p class="paint-line">A scene</p>
+      <p class="paint-sub">The size of a single panel.</p>
+      <a href="https://abernethyelementaryschool.betterworld.org/campaigns/abernethy-century-campaign" class="tier-cta" target="_blank" rel="noopener">Give $60</a>
+    </div>
+    <div class="tier-cell tier-paint">
+      <div class="tier-amount">$106</div>
+      <p class="paint-line">A wingspan</p>
+      <p class="paint-sub">Tall as arms outstretched.</p>
+      <a href="https://abernethyelementaryschool.betterworld.org/campaigns/abernethy-century-campaign" class="tier-cta" target="_blank" rel="noopener">Give $106</a>
+    </div>
+  </div>
+  <div class="tiers-subhead">Become a partner</div>
+  <div class="tiers-row cols-2">
+    <div class="tier-cell">
       <div class="tier-label">Ally</div>
       <div class="tier-amount">$250</div>
       <ul>
-        <li>Everything in Advocate</li>
+        <li>Name on Abernethy website</li>
         <li>Logo in print + online</li>
         <li>Social media recognition</li>
         <li>Gift in school catalog</li>
       </ul>
-      <a href="https://abernethyelementaryschool.betterworld.org/campaigns/abernethy-century-campaign" class="tier-cta" target="_blank" rel="noopener">Give</a>
+      <a href="https://abernethyelementaryschool.betterworld.org/campaigns/abernethy-century-campaign" class="tier-cta" target="_blank" rel="noopener">Give $250</a>
     </div>
-    <div class="tier-cell">
+    <div class="tier-cell highlight">
       <div class="tier-label">Patron</div>
-      <div class="tier-amount">$1,000</div>
+      <div class="tier-amount">$500</div>
       <ul>
         <li>Everything in Ally</li>
         <li>Premier logo placement</li>
         <li>Featured partner spotlight</li>
         <li>Event naming / co-branding</li>
       </ul>
-      <a href="https://abernethyelementaryschool.betterworld.org/campaigns/abernethy-century-campaign" class="tier-cta" target="_blank" rel="noopener">Give</a>
+      <a href="https://abernethyelementaryschool.betterworld.org/campaigns/abernethy-century-campaign" class="tier-cta" target="_blank" rel="noopener">Give $500</a>
     </div>
   </div>
-  <div class="major-row">
-    <div class="major-cell">
-      <div class="tier-label">Champion</div>
-      <div class="tier-amount">$2.5K</div>
-    </div>
-    <div class="major-cell">
-      <div class="tier-label">Leader</div>
-      <div class="tier-amount">$10K</div>
-    </div>
-    <div class="major-cell">
-      <div class="tier-label">Visionary</div>
-      <div class="tier-amount">$100K</div>
-    </div>
-  </div>
-  <div style="background:var(--cream); text-align:center; padding:1.5rem 2rem 4rem;">
-    <p style="font-size:0.85rem; color:#888;">Major gift? <a href="mailto:hello@abernethy2125.org" style="color:var(--orange); font-weight:700; text-decoration:none;">Let's talk.</a></p>
+  <div style="background:var(--cream); text-align:center; padding:2rem 2rem 4rem;">
+    <p style="font-size:0.85rem; color:#888;">Major gift? <a href="mailto:treasurer@supportabernethy.org" style="color:var(--orange); font-weight:700; text-decoration:none;">Let's talk.</a></p>
   </div>
 
   <!-- SUPPORTERS -->
@@ -694,7 +744,7 @@
       <p class="dl">Before July 2026.</p>
       <div class="cta-buttons">
         <a href="https://abernethyelementaryschool.betterworld.org/campaigns/abernethy-century-campaign" class="w" target="_blank" rel="noopener">Donate Now</a>
-        <a href="mailto:hello@abernethy2125.org" class="o">Contact Us</a>
+        <a href="mailto:treasurer@supportabernethy.org" class="o">Contact Us</a>
       </div>
     </div>
     <a class="ph" href="https://www.instagram.com/abernethybikebus" target="_blank" rel="noopener" style="min-height:400px; display:block;"><img src="images/bike-bus.png" alt="Abernethy bike bus — follow @abernethybikebus on Instagram"></a>

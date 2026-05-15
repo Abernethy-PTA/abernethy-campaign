@@ -67,17 +67,16 @@
     /* ---- HERO ---- */
     .hero {
       margin-top: 56px; min-height: calc(100vh - 56px);
-      display: grid; grid-template-rows: 1fr auto;
+      display: grid; grid-template-rows: auto 1fr auto;
       background: var(--black); color: var(--white);
       position: relative; overflow: hidden;
     }
-    .hero-top {
-      display: grid; grid-template-columns: 1fr 1fr;
-      min-height: 0;
-    }
+    .hero-banner { display: block; line-height: 0; }
+    .hero-banner img { width: 100%; height: auto; display: block; }
     .hero-text {
-      padding: 5rem 3rem 3rem;
-      display: flex; flex-direction: column; justify-content: center;
+      padding: 4rem 3rem 3rem;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center;
     }
     .hero-tagline {
       font-size: 0.8rem; font-weight: 700;
@@ -96,9 +95,9 @@
     }
     .hero-text p {
       font-size: 1.05rem; color: rgba(248,246,241,0.65);
-      max-width: 420px; line-height: 1.6; margin-bottom: 2rem;
+      max-width: 560px; line-height: 1.6; margin-bottom: 2rem;
     }
-    .hero-buttons { display: flex; gap: 0.75rem; }
+    .hero-buttons { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
     .hero-buttons a {
       padding: 0.85rem 2rem; border-radius: 6px; text-decoration: none;
       font-weight: 700; font-size: 0.85rem; text-transform: uppercase;
@@ -110,8 +109,6 @@
       background: transparent; color: var(--white);
       border: 2px solid rgba(248,246,241,0.25);
     }
-    .hero-photo { position: relative; }
-    .hero-photo .ph { position: absolute; inset: 0; border-radius: 0; }
     .hero-stats {
       display: grid; grid-template-columns: repeat(5, 1fr);
       border-top: 1px solid rgba(248,246,241,0.1);
@@ -409,12 +406,9 @@
     /* ---- RESPONSIVE ---- */
     @media (max-width: 900px) {
       nav ul { display: none; }
-      .hero-top { grid-template-columns: 1fr; }
-      .hero-photo { min-height: 350px; position: relative; }
-      .hero-photo .ph { position: absolute; inset: 0; }
       .hero-stats { grid-template-columns: repeat(3, 1fr); }
       .hero-stat:nth-child(4), .hero-stat:nth-child(5) { display: none; }
-      .hero-text { padding: 4rem 2rem 3rem; }
+      .hero-text { padding: 3rem 1.5rem 2.5rem; }
       .about-strip { grid-template-columns: 1fr; }
       .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto; min-height: auto; }
       .mosaic .ph { min-height: 200px; }
@@ -460,18 +454,16 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-top">
-      <div class="hero-text">
-        <div class="hero-tagline">100 years down · 100+ years more · $100K to make our space beautiful</div>
-        <h1>100 years of <span class="pop">growing up</span> together.</h1>
-        <p>Abernethy Elementary has been the heart of SE Portland since 1925. Now we're raising $100K to build the next century. Join us.</p>
-        <div class="hero-buttons">
-          <a href="https://abernethyelementaryschool.betterworld.org/campaigns/abernethy-century-campaign" class="primary" target="_blank" rel="noopener">Donate Now</a>
-          <a href="#tiers" class="secondary">Sponsorship Tiers</a>
-        </div>
-      </div>
-      <div class="hero-photo">
-        <div class="ph"><img src="images/hero-kids-running.png" alt="Kids running at Abernethy field day"></div>
+    <div class="hero-banner">
+      <img src="images/mural-banner.png" alt="Abernethy school mural — painted by the community">
+    </div>
+    <div class="hero-text">
+      <div class="hero-tagline">100 years down · 100+ years more · $100K to make our space beautiful</div>
+      <h1>100 years of <span class="pop">growing up</span> together.</h1>
+      <p>Abernethy Elementary has been the heart of SE Portland since 1925. Now we're raising $100K to build the next century. Join us.</p>
+      <div class="hero-buttons">
+        <a href="https://abernethyelementaryschool.betterworld.org/campaigns/abernethy-century-campaign" class="primary" target="_blank" rel="noopener">Donate Now</a>
+        <a href="#tiers" class="secondary">Sponsorship Tiers</a>
       </div>
     </div>
     <div class="hero-stats">

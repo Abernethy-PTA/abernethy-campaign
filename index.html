@@ -188,10 +188,9 @@
 
     /* ---- PHOTO MOSAIC ---- */
     .mosaic {
-      display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr;
+      display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 1fr 1fr;
       min-height: 500px;
     }
-    .mosaic .ph:first-child { grid-row: span 2; }
 
     /* ---- VALUES ---- */
     .values-bar {
@@ -483,7 +482,6 @@
       .about-strip { grid-template-columns: 1fr; }
       .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto; min-height: auto; }
       .mosaic .ph { min-height: 200px; }
-      .mosaic .ph:first-child { grid-row: span 1; }
       .values-bar { grid-template-columns: 1fr; }
       .val { border-right: none; border-bottom: 1px solid rgba(248,246,241,0.15); }
       .funds-grid { grid-template-columns: 1fr 1fr; }
@@ -581,11 +579,14 @@
 
   <!-- MOSAIC -->
   <div class="mosaic">
-    <div class="ph"><img src="images/neighborhood-mural.png" alt="Neighborhood mural"></div>
+    <div class="ph"><img src="images/bike-bus-crowd.jpg" alt="Bike bus rolling through the neighborhood"></div>
+    <div class="ph"><img src="images/mural-stencil.jpg" alt="Mural stencil — 'Be Kind' going up on the wall"></div>
     <div class="ph"><img src="images/school-garden.png" alt="School garden"></div>
+    <div class="ph"><img src="images/balloon-arch.jpg" alt="Balloon arch at a school gathering"></div>
+    <div class="ph"><img src="images/carnival-bmx.jpg" alt="BMX show at the Abernethy carnival"></div>
+    <div class="ph"><img src="images/knit-heart.jpg" alt="Hand-knit heart hanging on the schoolyard fence"></div>
     <div class="ph"><img src="images/handstand-event.png" alt="Fun at school event"></div>
-    <div class="ph"><img src="images/bike-group.png" alt="Bike group in neighborhood"></div>
-    <div class="ph"><img src="images/kid-biking.png" alt="Kid biking to school"></div>
+    <div class="ph"><img src="images/balloon-arch-street.jpg" alt="Balloon arch over the street for a neighborhood event"></div>
   </div>
 
   <!-- VALUES -->
@@ -667,12 +668,6 @@
     <div class="bleed-overlay">
       <h2>Built <em>together</em>. Shared by all.</h2>
     </div>
-  </div>
-
-  <!-- PLAYGROUND RENDERS -->
-  <div class="photo-pair">
-    <div class="ph"><img src="images/playground-aerial.jpg" alt="New playground design - aerial view"></div>
-    <div class="ph"><img src="images/playground-closeup.jpg" alt="New playground design - kids playing"></div>
   </div>
 
   <!-- GOAL -->

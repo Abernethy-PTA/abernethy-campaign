@@ -322,6 +322,34 @@
     .tier-cell.highlight .tier-cta { background: var(--orange); }
     .tier-cell .tier-cta:hover { transform: translateY(-1px); }
 
+    /* ---- TIERS + DONATE side-by-side ---- */
+    .tiers-donate {
+      display: grid; grid-template-columns: 1fr 1fr;
+      background: var(--cream); align-items: start;
+    }
+    .tiers-donate .tiers-stack { display: flex; flex-direction: column; border-right: 1px solid rgba(10,10,10,0.08); }
+    .tiers-donate .tier-cell {
+      border-right: none;
+      border-bottom: 1px solid rgba(10,10,10,0.08);
+      padding: 2.25rem 2.5rem;
+    }
+    .tiers-donate .tier-cell:last-child { border-bottom: none; }
+    .tiers-donate .tiers-subhead {
+      text-align: left; padding: 2rem 2.5rem 0.5rem;
+    }
+    .tiers-donate .tier-cell .tier-amount { margin-bottom: 0.75rem; }
+    .tiers-donate .tier-cell ul { margin-top: 0.5rem; }
+    .donate-widget {
+      position: sticky; top: 1.5rem;
+      padding: 3rem 2.5rem;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .donate-widget betterworld-donation-form { width: 100%; max-width: 460px; }
+    .donate-alt {
+      margin-top: 1.5rem; font-size: 0.85rem; color: #888; text-align: center;
+    }
+    .donate-alt a { color: var(--orange); font-weight: 700; text-decoration: none; }
+
     /* ---- PAINT DAY ---- */
     .paint-day {
       background: var(--black); color: var(--white);
@@ -462,6 +490,9 @@
       .fund { border-bottom: 1px solid rgba(248,246,241,0.1); }
       .tiers-row, .major-row { grid-template-columns: 1fr; }
       .tier-cell { border-right: none; border-bottom: 1px solid rgba(10,10,10,0.08); }
+      .tiers-donate { grid-template-columns: 1fr; }
+      .tiers-donate .tiers-stack { border-right: none; border-bottom: 1px solid rgba(10,10,10,0.08); }
+      .donate-widget { position: static; padding: 2.5rem 2rem; }
       .major-cell { border-right: none; border-bottom: 1px solid rgba(10,10,10,0.08); }
       .supporters-grid { grid-template-columns: 1fr 1fr; }
       .supporter-slot:nth-child(2n) { border-right: none; }
@@ -659,72 +690,61 @@
     </div>
   </div>
 
-  <!-- TIERS -->
-  <section class="block block-cream" id="tiers" style="padding-bottom:0;">
+  <!-- TIERS + DONATE -->
+  <section class="block block-cream" id="tiers" style="padding-bottom:2rem;">
     <div class="inner" style="text-align:center;">
       <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em; font-weight:700; color:var(--orange); margin-bottom:0.75rem;">How to Support</p>
       <h2 class="serif" style="font-size:clamp(2rem,4vw,3rem); font-weight:400;">Pick your level. Every one matters.</h2>
     </div>
   </section>
-  <div class="tiers-subhead">Inspired by the mural</div>
-  <div class="tiers-row">
-    <div class="tier-cell tier-paint">
-      <div class="tier-amount">$6</div>
-      <p class="paint-line">A swift</p>
-      <p class="paint-sub">Small as a swooping bird.</p>
-      <a href="#donate" class="tier-cta">Give $6</a>
+  <div class="tiers-donate" id="donate">
+    <div class="tiers-stack">
+      <div class="tiers-subhead">Inspired by the mural</div>
+      <div class="tier-cell tier-paint">
+        <div class="tier-amount">$6</div>
+        <p class="paint-line">A swift</p>
+        <p class="paint-sub">Small as a swooping bird.</p>
+      </div>
+      <div class="tier-cell tier-paint">
+        <div class="tier-amount">$60</div>
+        <p class="paint-line">A scene</p>
+        <p class="paint-sub">The size of a single panel.</p>
+      </div>
+      <div class="tier-cell tier-paint">
+        <div class="tier-amount">$106</div>
+        <p class="paint-line">A wingspan</p>
+        <p class="paint-sub">Tall as arms outstretched.</p>
+      </div>
+      <div class="tiers-subhead">Become a partner</div>
+      <div class="tier-cell">
+        <div class="tier-label">Ally</div>
+        <div class="tier-amount">$250</div>
+        <ul>
+          <li>Name on Abernethy website</li>
+          <li>Logo in print + online</li>
+          <li>Social media recognition</li>
+          <li>Gift in school catalog</li>
+        </ul>
+      </div>
+      <div class="tier-cell highlight">
+        <div class="tier-label">Patron</div>
+        <div class="tier-amount">$500</div>
+        <ul>
+          <li>Everything in Ally</li>
+          <li>Premier logo placement</li>
+          <li>Featured partner spotlight</li>
+          <li>Event naming / co-branding</li>
+        </ul>
+      </div>
     </div>
-    <div class="tier-cell tier-paint">
-      <div class="tier-amount">$60</div>
-      <p class="paint-line">A scene</p>
-      <p class="paint-sub">The size of a single panel.</p>
-      <a href="#donate" class="tier-cta">Give $60</a>
-    </div>
-    <div class="tier-cell tier-paint">
-      <div class="tier-amount">$106</div>
-      <p class="paint-line">A wingspan</p>
-      <p class="paint-sub">Tall as arms outstretched.</p>
-      <a href="#donate" class="tier-cta">Give $106</a>
-    </div>
-  </div>
-  <div class="tiers-subhead">Become a partner</div>
-  <div class="tiers-row cols-2">
-    <div class="tier-cell">
-      <div class="tier-label">Ally</div>
-      <div class="tier-amount">$250</div>
-      <ul>
-        <li>Name on Abernethy website</li>
-        <li>Logo in print + online</li>
-        <li>Social media recognition</li>
-        <li>Gift in school catalog</li>
-      </ul>
-      <a href="#donate" class="tier-cta">Give $250</a>
-    </div>
-    <div class="tier-cell highlight">
-      <div class="tier-label">Patron</div>
-      <div class="tier-amount">$500</div>
-      <ul>
-        <li>Everything in Ally</li>
-        <li>Premier logo placement</li>
-        <li>Featured partner spotlight</li>
-        <li>Event naming / co-branding</li>
-      </ul>
-      <a href="#donate" class="tier-cta">Give $500</a>
+    <div class="donate-widget">
+      <betterworld-donation-form data-widget-id="W016C7"></betterworld-donation-form>
+      <p class="donate-alt">Prefer to give on BetterWorld? <a href="https://abernethyelementaryschool.betterworld.org/campaigns/abernethy-century-campaign" target="_blank" rel="noopener">Open the campaign page.</a></p>
     </div>
   </div>
   <div style="background:var(--cream); text-align:center; padding:2rem 2rem 4rem;">
     <p style="font-size:0.85rem; color:#888;">Major gift? <a href="mailto:treasurer@supportabernethy.org" style="color:var(--orange); font-weight:700; text-decoration:none;">Let's talk.</a></p>
   </div>
-
-  <!-- DONATE -->
-  <section class="block block-cream" id="donate" style="padding-top:0;">
-    <div class="inner" style="display:flex; flex-direction:column; align-items:center; text-align:center; max-width:720px;">
-      <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em; font-weight:700; color:var(--orange); margin-bottom:0.75rem;">Give Now</p>
-      <h2 class="serif" style="font-size:clamp(2rem,4vw,3rem); font-weight:400; margin-bottom:2rem;">Chip in.</h2>
-      <betterworld-donation-form data-widget-id="W016C7"></betterworld-donation-form>
-      <p style="margin-top:1.5rem; font-size:0.85rem; color:#888;">Prefer to give on BetterWorld? <a href="https://abernethyelementaryschool.betterworld.org/campaigns/abernethy-century-campaign" target="_blank" rel="noopener" style="color:var(--orange); font-weight:700; text-decoration:none;">Open the campaign page.</a></p>
-    </div>
-  </section>
 
   <!-- SUPPORTERS -->
   <section class="block block-cream" id="supporters" style="padding-top:0;">

@@ -13,13 +13,13 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --black: #0a0a0a;
+      --black: #303868;
       --white: #f8f6f1;
-      --orange: #ff5c1a;
-      --blue: #1a3fff;
-      --yellow: #ffd000;
-      --green: #1e6b3a;
-      --cream: #f8f6f1;
+      --orange: #f66953;
+      --blue: #3e74fb;
+      --yellow: #fdc106;
+      --green: #26bf79;
+      --cream: #f3ebac;
     }
 
     body {
@@ -46,7 +46,7 @@
       letter-spacing: 0.06em; text-transform: uppercase;
     }
     .nav-logo .logo-box {
-      width: 38px; height: 38px; background: var(--cream); border-radius: 6px;
+      width: 38px; height: 38px; background: #fff; border-radius: 6px;
       display: flex; align-items: center; justify-content: center;
     }
     .nav-logo .logo-box img { height: 28px; filter: none; }
@@ -63,7 +63,7 @@
       font-size: 0.8rem; text-decoration: none; text-transform: uppercase;
       letter-spacing: 0.06em; transition: background 0.15s;
     }
-    .btn-donate:hover { background: #e04e10; }
+    .btn-donate:hover { background: #d94530; }
 
     /* ---- HERO ---- */
     .hero {
@@ -242,8 +242,9 @@
     /* ---- SWIFTS SPOTLIGHT ---- */
     .swifts-spotlight {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 3rem; padding: 5rem 3rem; align-items: center;
+      gap: 2rem; padding: 2rem 3rem; align-items: center;
     }
+    .swifts-embed .tiktok-embed { max-width: 380px !important; min-width: 280px !important; }
     .swifts-text .kicker {
       font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
       font-weight: 700; color: var(--orange); margin-bottom: 0.75rem;
@@ -259,6 +260,7 @@
       font-size: 0.8rem; color: #888; margin-top: 1rem;
     }
     .swifts-text .credit a { color: var(--orange); font-weight: 600; }
+    .swifts-spotlight { background: #fff !important; }
     .swifts-embed {
       display: flex; justify-content: center;
     }
@@ -330,9 +332,91 @@
     .tiers-donate .tier-cell {
       border-right: none;
       border-bottom: 1px solid rgba(10,10,10,0.08);
-      padding: 2.25rem 2.5rem;
+      padding: 1.25rem 2.5rem;
     }
     .tiers-donate .tier-cell:last-child { border-bottom: none; }
+    .tiers-donate .tier-cell.highlight { background: transparent; color: inherit; }
+    .tiers-donate .tier-cell.highlight .tier-label { color: var(--orange); }
+    .tiers-donate .tier-cell.highlight ul li { border-color: rgba(10,10,10,0.06); }
+    .tiers-poster {
+      width: 100%; max-width: 460px; height: auto; display: block;
+      margin: 0 auto 1.5rem; border-radius: 12px;
+    }
+    .tier-list {
+      list-style: none; margin: 0; padding: 0 2rem 2rem;
+      max-width: 560px; margin-left: auto; margin-right: auto;
+    }
+    .tier-list li {
+      display: grid; grid-template-columns: 5rem 1fr;
+      grid-template-areas: "amt name" "amt note";
+      column-gap: 1rem; row-gap: 0.15rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(10,10,10,0.08);
+      align-items: baseline;
+    }
+    .tier-list li:last-child { border-bottom: none; }
+    .tier-list .amt {
+      grid-area: amt;
+      font-family: 'Instrument Serif', serif; font-size: 1.75rem;
+      color: var(--black); line-height: 1;
+    }
+    .tier-list .name {
+      grid-area: name;
+      font-family: 'Instrument Serif', serif; font-size: 1.15rem;
+      color: var(--black);
+    }
+    .tier-list .note {
+      grid-area: note;
+      font-size: 0.8rem; color: #777; line-height: 1.4;
+    }
+
+    .paint-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;
+      padding: 0.5rem 2rem 2rem;
+    }
+    .paint-chip {
+      background: #fff; border: 2px solid rgba(10,10,10,0.08);
+      border-radius: 14px; padding: 1.25rem 1rem; text-align: center;
+    }
+    .paint-chip .amt {
+      font-family: 'Instrument Serif', serif; font-size: 2rem;
+      color: var(--black); line-height: 1;
+    }
+    .paint-chip .name {
+      font-family: 'Instrument Serif', serif; font-size: 1.1rem;
+      margin: 0.5rem 0 0.35rem; color: var(--black);
+    }
+    .paint-chip .sub {
+      font-size: 0.75rem; color: #777; line-height: 1.4;
+    }
+    .paint-chip.c-yellow { border-color: var(--yellow); }
+    .paint-chip.c-coral { border-color: var(--orange); }
+    .paint-chip.c-blue { border-color: var(--blue); }
+
+    .partner-row {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
+      padding: 0.5rem 2rem 2rem;
+    }
+    .partner-card {
+      background: #fff; border: 2px solid rgba(10,10,10,0.08);
+      border-radius: 14px; padding: 1.75rem 1.5rem;
+    }
+    .partner-card.featured { border-color: var(--orange); }
+    .partner-card .label {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;
+      font-weight: 700; color: var(--orange); margin-bottom: 0.4rem;
+    }
+    .partner-card .amt {
+      font-family: 'Instrument Serif', serif; font-size: 2.25rem;
+      color: var(--black); margin-bottom: 0.75rem; line-height: 1;
+    }
+    .partner-card ul { list-style: none; padding: 0; margin: 0; }
+    .partner-card ul li {
+      font-size: 0.85rem; padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(10,10,10,0.06); color: #555;
+    }
+    .partner-card ul li:last-child { border-bottom: none; }
+
     .tiers-donate .tiers-subhead {
       text-align: left; padding: 2rem 2.5rem 0.5rem;
     }
@@ -352,10 +436,20 @@
     /* ---- PAINT DAY ---- */
     .paint-day {
       background: var(--black); color: var(--white);
-      padding: 5rem 2rem; text-align: center; position: relative;
+      padding: 4rem 2rem; position: relative;
+    }
+    .paint-day .pd-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center;
+    }
+    .paint-day .pd-text { text-align: center; }
+    .paint-day .pd-photo img {
+      width: 100%; height: auto; display: block;
+      border-radius: 12px;
     }
     .paint-day .kicker {
-      font-size: 0.85rem; font-weight: 700; color: #ff7eb6;
+      font-size: 0.85rem; font-weight: 700; color: #daa2cb;
       text-transform: uppercase; letter-spacing: 0.18em; margin-bottom: 1.25rem;
     }
     .paint-day .big-date {
@@ -428,8 +522,11 @@
       padding: 3rem; display: flex; justify-content: space-between;
       align-items: center; font-size: 0.8rem;
     }
+    .mural-border { width: 100%; line-height: 0; overflow: hidden; }
+    .mural-border img { width: 100%; height: auto; display: block; }
+
     footer .footer-logo {
-      width: 56px; height: 56px; background: var(--cream); border-radius: 8px;
+      width: 56px; height: 56px; background: #fff; border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
     }
     footer .footer-logo img { height: 40px; }
@@ -487,6 +584,8 @@
       .funds-grid { grid-template-columns: 1fr 1fr; }
       .fund { border-bottom: 1px solid rgba(248,246,241,0.1); }
       .tiers-row, .major-row { grid-template-columns: 1fr; }
+      .paint-row, .partner-row { grid-template-columns: 1fr; }
+      .paint-day .pd-inner { grid-template-columns: 1fr; gap: 2rem; }
       .tier-cell { border-right: none; border-bottom: 1px solid rgba(10,10,10,0.08); }
       .tiers-donate { grid-template-columns: 1fr; }
       .tiers-donate .tiers-stack { border-right: none; border-bottom: 1px solid rgba(10,10,10,0.08); }
@@ -519,7 +618,6 @@
       <li><a href="#about">Story</a></li>
       <li><a href="#fund">The Fund</a></li>
       <li><a href="#tiers">Give</a></li>
-      <li><a href="#supporters">Partners</a></li>
     </ul>
     <a href="#donate" class="btn-donate">Donate</a>
   </nav>
@@ -527,15 +625,13 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-banner">
-      <img src="images/mural-banner.png" alt="Abernethy school mural — painted by the community">
+      <img src="images/hero-banner-illustrated.png" alt="Abernethy Elementary — Since 1925">
     </div>
     <div class="hero-text">
-      <div class="hero-tagline">100 years down · 100+ years more · $100K to make our space beautiful</div>
       <h1>100 years of <span class="pop">growing up</span> together.</h1>
-      <p>Abernethy Elementary has been the heart of SE Portland since 1925. Now we're raising $100K to build the next century. Join us.</p>
+      <p>We're raising $100K by July 2026 to fund the next century.</p>
       <div class="hero-buttons">
         <a href="#donate" class="primary">Donate Now</a>
-        <a href="#tiers" class="secondary">Sponsorship Tiers</a>
       </div>
     </div>
     <div class="hero-stats">
@@ -547,23 +643,54 @@
     </div>
   </section>
 
+  <!-- TIERS + DONATE -->
+  <section class="block block-cream" id="tiers" style="padding-bottom:2rem;">
+    <div class="inner" style="text-align:center;">
+      <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em; font-weight:700; color:var(--orange); margin-bottom:0.75rem;">How to Support</p>
+      <h2 class="serif" style="font-size:clamp(2rem,4vw,3rem); font-weight:400;">Pick your level. Every one matters.</h2>
+    </div>
+  </section>
+  <div class="tiers-donate" id="donate">
+    <div class="tiers-stack">
+      <img class="tiers-poster" src="images/banner-3x5-cropped.png" alt="Hey Neighbor — help make this shared space beautiful">
+      <ul class="tier-list">
+        <li><span class="amt">$6</span><span class="name">A swift</span><span class="note">Paint for a swooping bird</span></li>
+        <li><span class="amt">$60</span><span class="name">A scene</span><span class="note">Paint for a mural panel</span></li>
+        <li><span class="amt">$106</span><span class="name">A wingspan</span><span class="note">Paint for a full wingspan</span></li>
+        <li><span class="amt">$250</span><span class="name">Ally</span><span class="note">Name + logo on site, social recognition</span></li>
+        <li><span class="amt">$500</span><span class="name">Patron</span><span class="note">Premier placement, partner spotlight, event co-branding</span></li>
+      </ul>
+    </div>
+    <div class="donate-widget">
+      <betterworld-donation-form data-widget-id="W016C7"></betterworld-donation-form>
+      <p class="donate-alt">Prefer to give on BetterWorld? <a href="https://abernethyelementaryschool.betterworld.org/campaigns/abernethy-century-campaign" target="_blank" rel="noopener">Open the campaign page.</a></p>
+    </div>
+  </div>
+  <div style="background:var(--cream); text-align:center; padding:2rem 2rem 4rem;">
+    <p style="font-size:0.85rem; color:#888;">Major gift? <a href="mailto:treasurer@supportabernethy.org" style="color:var(--orange); font-weight:700; text-decoration:none;">Let's talk.</a></p>
+  </div>
+
   <!-- COMMUNITY PAINTING DAY -->
   <section class="paint-day" id="paint-day">
-    <p class="kicker">Paint with us</p>
-    <h2 class="big-date">May 30</h2>
-    <hr class="rule">
-    <p class="event-name">Community Painting Day</p>
-    <p class="event-meta">9 AM &middot; All ages welcome</p>
-    <p class="event-note">More information to come.</p>
+    <div class="pd-inner">
+      <div class="pd-photo">
+        <img src="images/we-take-pride.png" alt="Student painting 'We take pride' on the Abernethy mural">
+      </div>
+      <div class="pd-text">
+        <p class="kicker">Paint with us</p>
+        <h2 class="big-date">May 30</h2>
+        <hr class="rule">
+        <p class="event-name">Community Painting Day</p>
+        <p class="event-meta">9 AM &middot; All ages welcome</p>
+      </div>
+    </div>
   </section>
 
   <!-- ABOUT -->
   <div class="about-strip" id="about">
     <div class="text-side" style="background: var(--cream);">
       <h2>The cornerstone of Ladd's Addition.</h2>
-      <p>Walk through the doors and you feel it. Teachers who stay for decades. Parents who know each other by name. Kids who actually want to be here.</p>
-      <p>Art, music, recess in the rain. The kind of school people move to the neighborhood for. Abernethy has been the heart of this community since 1925.</p>
-      <p class="tax">Abernethy PTA is a 501(c)(3). All donations are tax-deductible.</p>
+      <p>Walk through the doors and you feel it. Teachers who stay for decades, parents who know each other by name.</p>
     </div>
     <div class="ph"><img src="images/school-sign-daffodils.jpg" alt="Abernethy School sign with spring daffodils"></div>
   </div>
@@ -593,7 +720,7 @@
   <div class="values-bar block-black">
     <div class="val">
       <h3 class="serif">Safe</h3>
-      <p>Every kid belongs here. Full stop.</p>
+      <p>Everyone belongs here.</p>
     </div>
     <div class="val">
       <h3 class="serif">Respectful</h3>
@@ -601,16 +728,8 @@
     </div>
     <div class="val">
       <h3 class="serif">Fun</h3>
-      <p>Messy art. Field day in the rain. Childhood done right.</p>
+      <p>Messy art. Carnival in the rain. Playing in the garden.</p>
     </div>
-  </div>
-
-  <!-- PHOTO STRIP: NEIGHBORHOOD LIFE -->
-  <div class="photo-strip">
-    <div class="ph"><img src="images/walking-bus.png" alt="Walking school bus"></div>
-    <div class="ph"><img src="images/soccer-field.png" alt="School soccer field"></div>
-    <div class="ph"><img src="images/campus-aerial.png" alt="Aerial view of Abernethy campus"></div>
-    <div class="ph"><img src="images/swift-watching.jpg" alt="Neighbors gathered at Abernethy to watch the Vaux's swifts"></div>
   </div>
 
   <!-- SWIFTS SPOTLIGHT -->
@@ -628,14 +747,6 @@
       <script async src="https://www.tiktok.com/embed.js"></script>
     </div>
   </section>
-
-  <!-- CENTENNIAL BLEED -->
-  <div class="bleed">
-    <div class="ph"><img src="images/community-dusk.png" alt="Abernethy community gathering at dusk"></div>
-    <div class="bleed-overlay">
-      <h2>Abernethy turned <em>100</em> in 2025. And we're just getting started.</h2>
-    </div>
-  </div>
 
   <!-- WHAT THE MONEY FUNDS -->
   <section class="block block-green" id="fund">
@@ -671,109 +782,9 @@
     </div>
   </div>
 
-  <!-- GOAL -->
-  <section class="goal block-cream">
-    <div class="label">Our Goal</div>
-    <div class="amount">$100K</div>
-    <div class="deadline">Join us before <strong>July 2026</strong></div>
-  </section>
-
-  <!-- PHOTO BLEED 2 -->
-  <div class="bleed">
-    <div class="ph"><img src="images/group-colorful.png" alt="Abernethy community group photo"></div>
-    <div class="bleed-overlay">
-      <h2>This is what <em>showing up</em> looks like.</h2>
-    </div>
-  </div>
-
-  <!-- TIERS + DONATE -->
-  <section class="block block-cream" id="tiers" style="padding-bottom:2rem;">
-    <div class="inner" style="text-align:center;">
-      <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em; font-weight:700; color:var(--orange); margin-bottom:0.75rem;">How to Support</p>
-      <h2 class="serif" style="font-size:clamp(2rem,4vw,3rem); font-weight:400;">Pick your level. Every one matters.</h2>
-    </div>
-  </section>
-  <div class="tiers-donate" id="donate">
-    <div class="tiers-stack">
-      <div class="tiers-subhead">Inspired by the mural</div>
-      <div class="tier-cell tier-paint">
-        <div class="tier-amount">$6</div>
-        <p class="paint-line">A swift</p>
-        <p class="paint-sub">Cost of paint for a swooping bird.</p>
-      </div>
-      <div class="tier-cell tier-paint">
-        <div class="tier-amount">$60</div>
-        <p class="paint-line">A scene</p>
-        <p class="paint-sub">Cost of paint for a single mural panel.</p>
-      </div>
-      <div class="tier-cell tier-paint">
-        <div class="tier-amount">$106</div>
-        <p class="paint-line">A wingspan</p>
-        <p class="paint-sub">Cost of paint for a full wingspan.</p>
-      </div>
-      <div class="tiers-subhead">Become a partner</div>
-      <div class="tier-cell">
-        <div class="tier-label">Ally</div>
-        <div class="tier-amount">$250</div>
-        <ul>
-          <li>Name on Abernethy website</li>
-          <li>Logo in print + online</li>
-          <li>Social media recognition</li>
-        </ul>
-      </div>
-      <div class="tier-cell highlight">
-        <div class="tier-label">Patron</div>
-        <div class="tier-amount">$500</div>
-        <ul>
-          <li>Everything in Ally</li>
-          <li>Premier logo placement</li>
-          <li>Featured partner spotlight</li>
-          <li>Event naming / co-branding</li>
-        </ul>
-      </div>
-    </div>
-    <div class="donate-widget">
-      <betterworld-donation-form data-widget-id="W016C7"></betterworld-donation-form>
-      <p class="donate-alt">Prefer to give on BetterWorld? <a href="https://abernethyelementaryschool.betterworld.org/campaigns/abernethy-century-campaign" target="_blank" rel="noopener">Open the campaign page.</a></p>
-    </div>
-  </div>
-  <div style="background:var(--cream); text-align:center; padding:2rem 2rem 4rem;">
-    <p style="font-size:0.85rem; color:#888;">Major gift? <a href="mailto:treasurer@supportabernethy.org" style="color:var(--orange); font-weight:700; text-decoration:none;">Let's talk.</a></p>
-  </div>
-
-  <!-- SUPPORTERS -->
-  <section class="block block-cream" id="supporters" style="padding-top:0;">
-    <div class="inner">
-      <h2 class="serif" style="font-size:clamp(1.8rem,3vw,2.5rem); font-weight:400; margin-bottom:0.4rem;">Our Partners</h2>
-      <p style="color:#888; font-size:0.95rem;">These people are building Abernethy's next century.</p>
-      <div class="supporters-grid">
-        <div class="supporter-slot">Your name here</div>
-        <div class="supporter-slot">Your name here</div>
-        <div class="supporter-slot">Your name here</div>
-        <div class="supporter-slot">Your name here</div>
-        <div class="supporter-slot">Your name here</div>
-        <div class="supporter-slot">Your name here</div>
-        <div class="supporter-slot">Your name here</div>
-        <div class="supporter-slot">Your name here</div>
-      </div>
-      <p style="text-align:center; margin-top:2rem; font-size:0.9rem; color:#888;">
-        <a href="#donate" style="color:var(--orange); font-weight:700; text-decoration:none;">Donate today</a> and join the wall.
-      </p>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <div class="cta-split">
-    <div class="cta-text">
-      <h2>Be our next partner.</h2>
-      <p>Family, business, neighbor, stranger who believes in public schools -- there's a place for you.</p>
-      <p class="dl">Before July 2026.</p>
-      <div class="cta-buttons">
-        <a href="#donate" class="w">Donate Now</a>
-        <a href="mailto:treasurer@supportabernethy.org" class="o">Contact Us</a>
-      </div>
-    </div>
-    <a class="ph" href="https://www.instagram.com/abernethybikebus" target="_blank" rel="noopener" style="min-height:400px; display:block;"><img src="images/bike-bus.png" alt="Abernethy bike bus — follow @abernethybikebus on Instagram"></a>
+  <!-- MURAL BORDER -->
+  <div class="mural-border">
+    <img src="images/mural-banner.jpg" alt="Abernethy school mural" loading="lazy">
   </div>
 
   <!-- FOOTER -->

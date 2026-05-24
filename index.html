@@ -474,6 +474,23 @@
       font-style: italic;
     }
 
+    /* ---- MURAL TEAM CREDITS ---- */
+    .credits-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+      max-width: 800px; margin: 0 auto; text-align: center;
+    }
+    .credit-card .name {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.75rem; font-weight: 400; margin-bottom: 0.5rem;
+    }
+    .credit-card .role {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--orange); font-weight: 700; margin-bottom: 1rem;
+    }
+    .credit-card .note { font-size: 1rem; line-height: 1.5; color: #555; margin-bottom: 1rem; }
+    .credit-card .links { font-size: 0.9rem; }
+    .credit-card .links a { color: var(--black); text-decoration: underline; font-weight: 600; }
+
     /* ---- SUPPORTERS ---- */
     .supporters-grid {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
@@ -586,6 +603,7 @@
       .tiers-row, .major-row { grid-template-columns: 1fr; }
       .paint-row, .partner-row { grid-template-columns: 1fr; }
       .paint-day .pd-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .credits-row { grid-template-columns: 1fr; gap: 2rem; }
       .tier-cell { border-right: none; border-bottom: 1px solid rgba(10,10,10,0.08); }
       .tiers-donate { grid-template-columns: 1fr; }
       .tiers-donate .tiers-stack { border-right: none; border-bottom: 1px solid rgba(10,10,10,0.08); }
@@ -670,6 +688,33 @@
     <p style="font-size:0.85rem; color:#888;">Major gift? <a href="mailto:treasurer@supportabernethy.org" style="color:var(--orange); font-weight:700; text-decoration:none;">Let's talk.</a></p>
   </div>
 
+  <!-- MURAL TEAM CREDITS -->
+  <section class="block block-cream" id="mural-team">
+    <div class="inner" style="text-align:center;">
+      <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em; font-weight:700; color:var(--orange); margin-bottom:0.75rem;">Special thanks</p>
+      <h2 class="serif" style="font-size:clamp(2rem,4vw,3rem); font-weight:400; margin-bottom:0.5rem;">The folks making the mural possible.</h2>
+      <p style="font-size:1rem; color:#666; max-width:600px; margin:0 auto 3rem;">Two neighbors are putting in serious hours so the rest of us can show up on May 30 and just paint.</p>
+      <div class="credits-row">
+        <div class="credit-card">
+          <p class="name">Dani Loureiro</p>
+          <p class="role">Designer &middot; Parent</p>
+          <p class="note">Designed the mural the whole neighborhood will paint.</p>
+          <p class="links"><a href="https://daniloureiro.com/" target="_blank" rel="noopener">daniloureiro.com</a></p>
+        </div>
+        <div class="credit-card">
+          <p class="name">Parker Martinek</p>
+          <p class="role">Sign Painter</p>
+          <p class="note">Scraping, washing, and tracing the walls so we can paint on May 30.</p>
+          <p class="links">
+            <a href="https://www.hisrollinghighness.com" target="_blank" rel="noopener">hisrollinghighness.com</a>
+            &middot;
+            <a href="https://instagram.com/hisrollinghighness" target="_blank" rel="noopener">@hisrollinghighness</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- COMMUNITY PAINTING DAY -->
   <section class="paint-day" id="paint-day">
     <div class="pd-inner">
@@ -681,7 +726,9 @@
         <h2 class="big-date">May 30</h2>
         <hr class="rule">
         <p class="event-name">Community Painting Day</p>
-        <p class="event-meta">9 AM &middot; All ages welcome</p>
+        <p class="event-meta">9 AM &ndash; 2 PM &middot; Abernethy field &middot; All ages welcome</p>
+        <p class="event-note">Bring brushes, containers, and rags. Scaffolding's set up (thanks, <a href="https://www.lovettdeconstruction.com/" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">Lovett Deconstruction</a>) &mdash; bring a ladder too if you have one and feel comfortable painting from it. No painting if it's raining &mdash; check back here Saturday morning for the call.</p>
+        <p class="event-note">Day-of questions? Text Aaron at <a href="tel:+16503903405" style="color:inherit; text-decoration:underline;">650-390-3405</a>.</p>
       </div>
     </div>
   </section>

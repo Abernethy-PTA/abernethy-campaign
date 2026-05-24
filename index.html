@@ -64,6 +64,15 @@
       letter-spacing: 0.06em; transition: background 0.15s;
     }
     .btn-donate:hover { background: #d94530; }
+    .nav-cta { display: flex; gap: 0.6rem; align-items: center; }
+    .btn-may30 {
+      background: var(--yellow); color: var(--black); border: none;
+      padding: 0.55rem 1.1rem; border-radius: 6px; font-weight: 700;
+      font-size: 0.8rem; text-decoration: none; text-transform: uppercase;
+      letter-spacing: 0.06em; transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .btn-may30:hover { background: #f5d635; }
 
     /* ---- HERO ---- */
     .hero {
@@ -637,7 +646,10 @@
       <li><a href="#fund">The Fund</a></li>
       <li><a href="#tiers">Give</a></li>
     </ul>
-    <a href="#donate" class="btn-donate">Donate</a>
+    <div class="nav-cta">
+      <a href="#paint-day" class="btn-may30">May 30</a>
+      <a href="#donate" class="btn-donate">Donate</a>
+    </div>
   </nav>
 
   <!-- HERO -->

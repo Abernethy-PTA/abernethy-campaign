@@ -497,6 +497,35 @@
       font-size: 0.85rem; color: rgba(248,246,241,0.4);
       font-style: italic;
     }
+    .paint-day .pd-bring {
+      background: var(--cream); color: var(--black);
+      border-radius: 14px; padding: 1.75rem; text-align: left;
+      margin-top: 1.5rem; max-width: 460px; margin-left: auto; margin-right: auto;
+    }
+    .paint-day .pd-bring h3 {
+      font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em;
+      font-weight: 700; color: var(--orange); margin-bottom: 0.75rem;
+    }
+    .paint-day .pd-bring ul { list-style: none; margin: 0 0 1.25rem; padding: 0; }
+    .paint-day .pd-bring li {
+      font-size: 1rem; line-height: 1.5; padding: 0.55rem 0 0.55rem 1.5rem;
+      position: relative; border-bottom: 1px solid rgba(10,10,10,0.08);
+    }
+    .paint-day .pd-bring li:last-child { border-bottom: none; }
+    .paint-day .pd-bring li::before {
+      content: ""; position: absolute; left: 0; top: 0.95rem;
+      width: 8px; height: 8px; border-radius: 50%; background: var(--orange);
+    }
+    .paint-day .pd-bring .pd-note-line {
+      font-size: 0.9rem; line-height: 1.55; color: #555; margin-bottom: 1.25rem;
+    }
+    .paint-day .pd-bring .pd-note-line a { color: var(--orange); font-weight: 600; }
+    .paint-day .pd-bring .pd-contact {
+      font-size: 1rem; font-weight: 700; color: var(--black);
+      background: var(--yellow); border-radius: 8px;
+      padding: 0.8rem 1rem; text-align: center; margin: 0;
+    }
+    .paint-day .pd-bring .pd-contact a { color: var(--black); text-decoration: underline; }
 
     /* ---- MURAL TEAM CREDITS ---- */
     .credits-row {
@@ -760,8 +789,8 @@
   <section class="block block-cream" id="mural-team">
     <div class="inner" style="text-align:center;">
       <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em; font-weight:700; color:var(--orange); margin-bottom:0.75rem;">Special thanks</p>
-      <h2 class="serif" style="font-size:clamp(2rem,4vw,3rem); font-weight:400; margin-bottom:0.5rem;">The folks making the mural possible.</h2>
-      <p style="font-size:1rem; color:#666; max-width:600px; margin:0 auto 3rem;">Two neighbors are putting in serious hours so the rest of us can show up on May 30 and just paint.</p>
+      <h2 class="serif" style="font-size:clamp(2rem,4vw,3rem); font-weight:400; margin-bottom:0.5rem;">Some of the key folks making the mural possible.</h2>
+      <p style="font-size:1rem; color:#666; max-width:600px; margin:0 auto 3rem;">And so many more &mdash; our art teacher, our principal, PTA funding, and hours and hours of volunteer time. These two neighbors are putting in serious hours so the rest of us can show up on May 30 and just paint.</p>
       <div class="credits-row">
         <div class="credit-card">
           <p class="name">Dani Loureiro</p>
@@ -795,8 +824,15 @@
         <hr class="rule">
         <p class="event-name">Community Painting Day</p>
         <p class="event-meta">9 AM &ndash; 2 PM &middot; Abernethy field &middot; All ages welcome</p>
-        <p class="event-note">Bring brushes, containers, and rags. Scaffolding's set up (thanks, <a href="https://www.lovettdeconstruction.com/" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">Lovett Deconstruction</a>) &mdash; bring a ladder too if you have one and feel comfortable painting from it. The weather forecast looks 65 and sunny. Check back here Saturday morning for the call.</p>
-        <p class="event-note">Day-of questions? Text Aaron at <a href="tel:+16503903405" style="color:inherit; text-decoration:underline;">650-390-3405</a>.</p>
+        <div class="pd-bring">
+          <h3>Bring with you</h3>
+          <ul>
+            <li>Brushes, containers, and rags</li>
+            <li>A ladder &mdash; if you have one and feel comfortable painting from it</li>
+          </ul>
+          <p class="pd-note-line">Scaffolding's already set up (thanks, <a href="https://www.lovettdeconstruction.com/" target="_blank" rel="noopener">Lovett Deconstruction</a>). Forecast: <strong>65&deg; and sunny</strong>. Check back here Saturday morning for the final call.</p>
+          <p class="pd-contact">Day-of questions? Text Aaron: <a href="tel:+16503903405">650-390-3405</a></p>
+        </div>
       </div>
     </div>
   </section>

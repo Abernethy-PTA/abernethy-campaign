@@ -521,11 +521,48 @@
     }
     .paint-day .pd-bring .pd-note-line a { color: var(--orange); font-weight: 600; }
     .paint-day .pd-bring .pd-contact {
-      font-size: 1rem; font-weight: 700; color: var(--black);
-      background: var(--yellow); border-radius: 8px;
-      padding: 0.8rem 1rem; text-align: center; margin: 0;
+      font-size: 0.8rem; color: #999; margin: 0;
     }
-    .paint-day .pd-bring .pd-contact a { color: var(--black); text-decoration: underline; }
+    .paint-day .pd-bring .pd-contact a { color: #999; text-decoration: underline; }
+
+    /* ---- MURAL STORY ARC ---- */
+    .mural-arc { background: var(--black); color: var(--white); }
+    .mural-arc .arc-head {
+      text-align: center; max-width: 700px; margin: 0 auto;
+      padding: 5rem 2rem 2.5rem;
+    }
+    .mural-arc .arc-head .kicker {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+      font-weight: 700; color: var(--yellow); margin-bottom: 0.75rem;
+    }
+    .mural-arc .arc-head h2 {
+      font-family: 'Instrument Serif', serif; font-weight: 400;
+      font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;
+    }
+    .mural-arc .arc-head p { color: rgba(248,246,241,0.6); font-size: 1rem; line-height: 1.6; }
+    .arc-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+      max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem;
+    }
+    .arc-step { display: flex; flex-direction: column; }
+    .arc-media {
+      aspect-ratio: 4/3; border-radius: 12px; overflow: hidden;
+      position: relative; background: #20264a;
+    }
+    .arc-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .arc-soon {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      border: 2px dashed rgba(248,246,241,0.25); border-radius: 12px;
+      color: rgba(248,246,241,0.75); padding: 1rem; gap: 0.5rem;
+    }
+    .arc-soon .soon-icon { font-size: 1.75rem; }
+    .arc-soon .soon-text { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em; }
+    .arc-step .arc-stage {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;
+      font-weight: 700; color: var(--orange); margin: 1rem 0 0.4rem;
+    }
+    .arc-step .arc-cap { font-size: 0.95rem; line-height: 1.5; color: rgba(248,246,241,0.75); }
 
     /* ---- MURAL TEAM CREDITS ---- */
     .credits-row {
@@ -704,6 +741,7 @@
       .block { padding: 3.5rem 2rem; }
       .topbar .tb-full { display: none; }
       .topbar .tb-short { display: inline-flex; }
+      .arc-grid { grid-template-columns: 1fr; gap: 1.75rem; }
       .press-facts { grid-template-columns: 1fr 1fr; }
       .press-fact:nth-child(2n) { border-right: none; }
       .press-fact:nth-child(-n+2) { border-bottom: 1px solid rgba(10,10,10,0.12); }
@@ -831,8 +869,38 @@
             <li>A ladder &mdash; if you have one and feel comfortable painting from it</li>
           </ul>
           <p class="pd-note-line">Scaffolding's already set up (thanks, <a href="https://www.lovettdeconstruction.com/" target="_blank" rel="noopener">Lovett Deconstruction</a>). Forecast: <strong>65&deg; and sunny</strong>. Check back here Saturday morning for the final call.</p>
-          <p class="pd-contact">Day-of questions? Text Aaron: <a href="tel:+16503903405">650-390-3405</a></p>
+          <p class="pd-contact">Urgent day-of issues only? Text Aaron at <a href="tel:+16503903405">650-390-3405</a>.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MURAL STORY ARC -->
+  <section class="mural-arc" id="mural-story">
+    <div class="arc-head">
+      <p class="kicker">The story of the wall</p>
+      <h2 class="serif">Watch it come to life.</h2>
+      <p>From a bare brick wall to a neighborhood landmark &mdash; the mural takes shape one Saturday at a time.</p>
+    </div>
+    <div class="arc-grid">
+      <div class="arc-step">
+        <div class="arc-media"><img src="images/mural-stencil.jpg" alt="The wall being prepped and traced before painting"></div>
+        <p class="arc-stage">Before &middot; Now</p>
+        <p class="arc-cap">Scraped, washed, and traced &mdash; the bare wall gets ready for paint.</p>
+      </div>
+      <div class="arc-step">
+        <div class="arc-media">
+          <div class="arc-soon"><span class="soon-icon">🎨</span><span class="soon-text">Photos this Saturday</span></div>
+        </div>
+        <p class="arc-stage">During &middot; May 30</p>
+        <p class="arc-cap">The whole neighborhood picks up a brush. Come be in this picture.</p>
+      </div>
+      <div class="arc-step">
+        <div class="arc-media">
+          <div class="arc-soon"><span class="soon-icon">✨</span><span class="soon-text">Check back soon</span></div>
+        </div>
+        <p class="arc-stage">After</p>
+        <p class="arc-cap">A finished landmark &mdash; ours to share for the next 100 years.</p>
       </div>
     </div>
   </section>
@@ -861,7 +929,7 @@
           <p class="v">Abernethy turned 100 last year. The mural anchors a neighborhood-led campaign to reinvest in the school for its next century.</p>
         </div>
       </div>
-      <p class="press-contact">Media contact: <strong>Aaron Stoertz</strong> &middot; <a href="tel:+16503903405">650-390-3405</a> &middot; <a href="mailto:press@supportabernethy.org">press@supportabernethy.org</a><br><span style="font-size:0.8rem; color:#999;">Photos of the mural design and prep work available on request.</span></p>
+      <p class="press-contact">Media contact: <strong>Aaron Stoertz</strong> &middot; <a href="mailto:press@supportabernethy.org">press@supportabernethy.org</a><br><span style="font-size:0.8rem; color:#999;">Photos of the mural design and prep work available on request.</span></p>
     </div>
   </section>
 

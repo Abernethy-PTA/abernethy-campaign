@@ -493,6 +493,19 @@
     .paint-day .event-meta {
       font-size: 1rem; color: rgba(248,246,241,0.75); margin-bottom: 1.25rem;
     }
+    .paint-day .pd-gallery {
+      max-width: 1100px; margin: 3rem auto 0;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    }
+    .paint-day .pd-gallery figure { margin: 0; }
+    .paint-day .pd-gallery img {
+      width: 100%; height: 280px; object-fit: cover;
+      display: block; border-radius: 12px;
+    }
+    .paint-day .pd-gallery figcaption {
+      font-size: 0.85rem; color: rgba(248,246,241,0.55);
+      margin-top: 0.6rem; text-align: center;
+    }
     .paint-day .event-note {
       font-size: 0.85rem; color: rgba(248,246,241,0.4);
       font-style: italic;
@@ -686,6 +699,7 @@
       .tiers-row, .major-row { grid-template-columns: 1fr; }
       .paint-row, .partner-row { grid-template-columns: 1fr; }
       .paint-day .pd-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .paint-day .pd-gallery { grid-template-columns: 1fr; gap: 1.5rem; }
       .credits-row { grid-template-columns: 1fr; gap: 2rem; }
       .tier-cell { border-right: none; border-bottom: 1px solid rgba(10,10,10,0.08); }
       .tiers-donate { grid-template-columns: 1fr; }
@@ -833,6 +847,16 @@
           <p class="pd-note-line"><strong>We're about 80% done</strong> &mdash; one more push finishes the wall. Stay tuned for a date in July to help us bring it home. In the meantime, you can still <a href="#donate">chip in below</a>.</p>
         </div>
       </div>
+    </div>
+    <div class="pd-gallery">
+      <figure>
+        <img src="images/mural-painting.png" alt="Volunteers painting the mural across the wall on Community Painting Day">
+        <figcaption>The wall coming alive &mdash; about 80% done by day's end.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/mural-stencil.jpg" alt="The mural design stenciled in outline on the wall, ready to paint">
+        <figcaption>From outline to color &mdash; the &ldquo;Be Kind&rdquo; design ready for paint.</figcaption>
+      </figure>
     </div>
   </section>
 
